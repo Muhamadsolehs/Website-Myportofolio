@@ -66,6 +66,12 @@
             transform: translateX(-50%);
         }
 
+        .site-header,
+        .section,
+        .site-footer {
+            max-width: 1400px;
+        }
+
         @keyframes headerTexture {
             0% {
                 background-position: 0% 50%, 0 0;
@@ -202,7 +208,7 @@
         h1 {
             max-width: 720px;
             margin-bottom: 28px;
-            font-size: clamp(64px, 10vw, 144px);
+            font-size: clamp(52px, 10vw, 144px);
             line-height: .86;
             letter-spacing: -.09em;
         }
@@ -240,7 +246,7 @@
         }
 
         .service-grid {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             margin-top: 30px;
         }
 
@@ -459,7 +465,7 @@
 
         .split {
             display: grid;
-            grid-template-columns: 1.1fr .9fr;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
             align-items: end;
             gap: 80px;
         }
@@ -481,7 +487,7 @@
         }
 
         .project-grid {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             margin-top: 40px;
         }
 
@@ -537,7 +543,7 @@
 
         .contact-heading {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
             align-items: end;
             gap: 24px;
             margin-bottom: 70px;
@@ -560,7 +566,7 @@
 
         .contact-form {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
             gap: 0 44px;
         }
 
@@ -643,7 +649,7 @@
 
         .footer-main {
             display: grid;
-            grid-template-columns: 1.35fr 1fr 1fr;
+            grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) minmax(0, 1fr);
             gap: 56px;
         }
 
@@ -801,6 +807,44 @@
             transform: translateY(0);
         }
 
+        @media (min-width: 701px) and (max-width: 1050px) {
+            .site-header,
+            .section,
+            .site-footer {
+                width: min(100% - 40px, 920px);
+            }
+
+            .site-header {
+                gap: 12px;
+                padding: 10px 12px;
+            }
+
+            .nav {
+                gap: 8px;
+            }
+
+            .nav a {
+                padding-inline: 6px;
+            }
+
+            .site-header .pill {
+                padding-left: 10px;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                row-gap: 20px;
+            }
+
+            .split {
+                gap: 40px;
+            }
+
+            .footer-main {
+                gap: 28px;
+            }
+        }
+
         @media (max-width: 700px) {
 
             .site-header,
@@ -822,6 +866,15 @@
 
             .hero-copy {
                 margin-left: 0;
+            }
+
+            h1 {
+                max-width: 100%;
+                font-size: clamp(52px, 16vw, 92px);
+            }
+
+            h2 {
+                font-size: clamp(38px, 12vw, 64px);
             }
 
             .service-grid,
@@ -971,6 +1024,63 @@
 
             .author-name:hover::after {
                 transform: scaleX(1);
+            }
+        }
+
+        @media (max-width: 420px) {
+            .site-header {
+                width: calc(100% - 16px);
+                padding: 8px 9px;
+                border-radius: 14px;
+            }
+
+            .brand {
+                font-size: 13px;
+            }
+
+            .sound-toggle {
+                padding: 7px 8px;
+                font-size: 9px;
+            }
+
+            .site-header .pill {
+                gap: 6px;
+                padding: 5px 6px 5px 9px;
+                font-size: 9px;
+            }
+
+            .site-header .pill span {
+                width: 20px;
+                height: 20px;
+                font-size: 13px;
+            }
+
+            .section {
+                width: calc(100% - 32px);
+                padding-top: 78px;
+                padding-bottom: 78px;
+            }
+
+            .hero {
+                padding-bottom: 34px;
+            }
+
+            .hero-copy strong {
+                font-size: 22px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .footer-lead {
+                grid-column: auto;
+            }
+
+            .site-footer {
+                width: calc(100% - 16px);
+                padding: 32px 16px 18px;
             }
         }
     </style>

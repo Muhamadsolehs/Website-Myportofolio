@@ -895,6 +895,13 @@
                 margin-top: 36px;
             }
 
+            .author-name {
+                font-size: 5.0rem;
+                font-weight: 700;
+                letter-spacing: -0.02em;
+                color: #ffffff;
+            }
+
             .skill-card {
                 min-height: 220px;
                 padding: 16px;
@@ -939,6 +946,32 @@
                 margin-bottom: -5px;
                 font-size: 29vw;
             }
+
+            .author-name {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                z-index: 1;
+            }
+
+            .author-name::after {
+                content: "";
+                position: absolute;
+                left: -4px;
+                right: -4px;
+                bottom: 0.08em;
+                height: 0.35em;
+                background: #ff3b30;
+                border-radius: 3px;
+                transform: scaleX(0);
+                transform-origin: left center;
+                transition: transform 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+                z-index: -1;
+            }
+
+            .author-name:hover::after {
+                transform: scaleX(1);
+            }
         }
     </style>
 </head>
@@ -946,7 +979,7 @@
 <body>
     <canvas id="sequence" aria-label="Scroll-controlled image sequence"></canvas>
     <header class="site-header">
-        <a class="brand" href="#home">Folioblox</a>
+        <a class="brand" href="#home">My Portfolio</a>
         <nav class="nav" aria-label="Main navigation">
             <a href="#home">Home</a>
             <a href="#skills">Skills</a>
@@ -963,6 +996,7 @@
         <section class="section hero" id="home">
             <p class="eyebrow" data-reveal>Hey, I'm a</p>
             <h1 data-reveal>Software<br>Developer</h1>
+            <h3 class="author-name" data-reveal>Muhamad Soleh Sulaeman</h3>
             <div class="hero-copy" data-reveal>
                 <strong>I build digital products that work.</strong>
                 From system analysis to visual design, I create reliable web, mobile, and multimedia experiences.
@@ -981,102 +1015,108 @@
                     <p class="eyebrow">My skills</p>
                     <h2>Tools I use<br>to build solutions.</h2>
                 </div>
-                <p>From system planning to final delivery, these are the tools behind my technical and creative work.</p>
+                <p>From system planning to final delivery, these are the tools behind my technical and creative work.
+                </p>
             </div>
             <div class="skills-marquee" data-reveal>
-            <div class="skills-grid">
-                <article class="skill-card">
-                    <span class="skill-number">01 / BUILD</span>
-                    <h3>Frontend</h3>
-                    <div class="tool-list">
-                        <span class="tool"><img class="tool-icon"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                                alt="HTML5">HTML/CSS</span>
-                        <span class="tool"><img class="tool-icon"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-                                alt="React">React JS</span>
-                        <span class="tool"><img class="tool-icon"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-                                alt="Tailwind CSS">Tailwind</span>
-                        <span class="tool"><img class="tool-icon"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
-                                alt="Bootstrap">Bootstrap</span>
-                        <span class="tool"><img class="tool-icon"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                                alt="JavaScript">JavaScript</span>
-                    </div>
-                </article>
-                <article class="skill-card">
-                    <span class="skill-number">02 / LOGIC</span>
-                    <h3>Backend<br>& Database</h3>
-                    <div class="tool-list">
-                        <span class="tool"><img class="tool-icon"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-                                alt="PHP">PHP</span>
-                        <span class="tool"><img class="tool-icon"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-                                alt="Python">Python</span>
-                        <span class="tool"><img class="tool-icon"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
-                                alt="Laravel">Laravel</span>
-                        <span class="tool"><img class="tool-icon"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
-                                alt="Node.js">Node.js</span>
-                        <span class="tool"><img class="tool-icon"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-                                alt="MySQL">MySQL</span>
-                        <span class="tool"><img class="tool-icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
-                            alt="PostgreSQL">PostgreSQL</span>
-                        <span class="tool"><img class="tool-icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg"
-                            alt="Firebase">Firebase</span>
-                        <span class="tool"><span class="tool-fallback">DB</span>Database Admin</span>
-                    </div>
-                </article>
-                <article class="skill-card">
-                    <span class="skill-number">03 / EXPERIENCE</span>
-                    <h3>System & UI/UX<br>Analysis</h3>
-                    <div class="tool-list">
-                        <span class="tool"><img class="tool-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/figma.svg"
-                                alt="Figma">Figma</span>
-                        <span class="tool"><img class="tool-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/adobexd.svg"
-                                alt="Adobe XD">Adobe XD</span>
-                        <span class="tool"><img class="tool-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/notion.svg"
-                                alt="Notion">Notion</span>
-                    </div>
-                </article>
-                <article class="skill-card">
-                    <span class="skill-number">04 / VISUAL</span>
-                    <h3>Graphic<br>Design</h3>
-                    <div class="tool-list">
-                        <span class="tool"><img class="tool-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/canva.svg"
-                                alt="Canva">Canva</span>
-                        <span class="tool"><span class="tool-fallback">IP</span>Ibis Paint</span>
-                        <span class="tool"><span class="tool-fallback">PL</span>PixelLab</span>
-                        <span class="tool"><img class="tool-icon"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg"
-                                alt="Photoshop">Photoshop</span>
-                        <span class="tool"><img class="tool-icon"
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-original.svg"
-                                alt="Illustrator">Illustrator</span>
-                    </div>
-                </article>
-                <article class="skill-card">
-                    <span class="skill-number">05 / MOTION</span>
-                    <h3>Motion &<br>Animation</h3>
-                    <div class="tool-list">
-                        <span class="tool"><img class="tool-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/capcut.svg"
-                                alt="CapCut">CapCut</span>
-                        <span class="tool"><img class="tool-icon"
-                            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/davinciresolve.svg"
-                                alt="DaVinci Resolve">DaVinci</span>
-                        <span class="tool"><img class="tool-icon"
-                            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/adobepremierepro.svg"
-                                alt="Adobe Premiere Pro">Premiere</span>
-                    </div>
-                </article>
-            </div>
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <span class="skill-number">01 / BUILD</span>
+                        <h3>Frontend</h3>
+                        <div class="tool-list">
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                                    alt="HTML5">HTML/CSS</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                                    alt="React">React JS</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                                    alt="Tailwind CSS">Tailwind</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                                    alt="Bootstrap">Bootstrap</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                                    alt="JavaScript">JavaScript</span>
+                        </div>
+                    </article>
+                    <article class="skill-card">
+                        <span class="skill-number">02 / LOGIC</span>
+                        <h3>Backend<br>& Database</h3>
+                        <div class="tool-list">
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+                                    alt="PHP">PHP</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                                    alt="Python">Python</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
+                                    alt="Laravel">Laravel</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+                                    alt="Node.js">Node.js</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                                    alt="MySQL">MySQL</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+                                    alt="PostgreSQL">PostgreSQL</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg"
+                                    alt="Firebase">Firebase</span>
+                            <span class="tool"><span class="tool-fallback">DB</span>Database Admin</span>
+                        </div>
+                    </article>
+                    <article class="skill-card">
+                        <span class="skill-number">03 / EXPERIENCE</span>
+                        <h3>System & UI/UX<br>Analysis</h3>
+                        <div class="tool-list">
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/figma.svg"
+                                    alt="Figma">Figma</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/adobexd.svg"
+                                    alt="Adobe XD">Adobe XD</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/notion.svg"
+                                    alt="Notion">Notion</span>
+                        </div>
+                    </article>
+                    <article class="skill-card">
+                        <span class="skill-number">04 / VISUAL</span>
+                        <h3>Graphic<br>Design</h3>
+                        <div class="tool-list">
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/canva.svg"
+                                    alt="Canva">Canva</span>
+                            <span class="tool"><span class="tool-fallback">IP</span>Ibis Paint</span>
+                            <span class="tool"><span class="tool-fallback">PL</span>PixelLab</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg"
+                                    alt="Photoshop">Photoshop</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-original.svg"
+                                    alt="Illustrator">Illustrator</span>
+                        </div>
+                    </article>
+                    <article class="skill-card">
+                        <span class="skill-number">05 / MOTION</span>
+                        <h3>Motion &<br>Animation</h3>
+                        <div class="tool-list">
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/capcut.svg"
+                                    alt="CapCut">CapCut</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/davinciresolve.svg"
+                                    alt="DaVinci Resolve">DaVinci</span>
+                            <span class="tool"><img class="tool-icon"
+                                    src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/adobepremierepro.svg"
+                                    alt="Adobe Premiere Pro">Premiere</span>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -1114,7 +1154,8 @@
                     <h3>Booking<br>System</h3>
                 </article>
                 <article class="project"><img class="project-media"
-                        src="../ezgif-8258e3edc3750f03-jpg/ezgif-frame-120.jpg" alt="Mobile and web application project visual">
+                        src="../ezgif-8258e3edc3750f03-jpg/ezgif-frame-120.jpg"
+                        alt="Mobile and web application project visual">
                     <small>02 / 2024</small>
                     <h3>E-Learning<br>Platform</h3>
                 </article>
@@ -1156,7 +1197,8 @@
                 </div>
                 <div class="field">
                     <label for="challenge">Tell me about your project</label>
-                    <textarea id="challenge" name="challenge" placeholder="Share your goals, features, or visual direction"></textarea>
+                    <textarea id="challenge" name="challenge"
+                        placeholder="Share your goals, features, or visual direction"></textarea>
                 </div>
                 <div class="field">
                     <label for="marketing">What is your project timeline?</label>
@@ -1203,7 +1245,8 @@
                 <address>1330 Huffman Rd, Anchorage,<br>Alaska, United States</address>
                 <p class="footer-label">Social</p>
                 <div class="footer-socials">
-                    <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+                    <a href="https://www.instagram.com/muhamadsoleh.co.id/" target="_blank"
+                        rel="noreferrer">Instagram</a>
                     <a href="https://x.com" target="_blank" rel="noreferrer">Twitter / X</a>
                     <a href="https://youtube.com" target="_blank" rel="noreferrer">YouTube</a>
                     <a href="https://pinterest.com" target="_blank" rel="noreferrer">Pinterest</a>
@@ -1212,8 +1255,8 @@
             <div class="footer-column">
                 <p class="footer-label">Contact</p>
                 <address><a href="tel:+6260586870">+61 2058 6870</a><br><a
-                        href="mailto:hello@folioblox.studio">hello@folioblox.studio</a><br><a
-                        href="https://instagram.com/folioblox" target="_blank" rel="noreferrer">@folioblox on
+                        href="mailto:muhamadsolehs871@gmail.com">muhamadsolehs871@gmail.com</a><br><a
+                        href="https://www.instagram.com/muhamadsoleh.co.id/" target="_blank" rel="noreferrer">Follow on
                         Instagram</a></address>
                 <p class="footer-label">Helpful Links</p>
                 <nav class="footer-links" aria-label="Footer navigation">
@@ -1229,10 +1272,10 @@
         <div class="footer-meta">
             <span>Folioblox 2025</span>
             <span><b style="color: var(--orange);">+</b> Made with Love</span>
-            <span>Created by Folioblox Studio</span>
+            <span>Created by Arena Studio</span>
         </div>
         <div class="footer-visual" aria-label="Studio banner">
-            <h2>STUDIO</h2>
+            <h2>ALYA</h2>
         </div>
     </footer>
 

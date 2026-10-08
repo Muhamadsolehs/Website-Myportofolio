@@ -3,8 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Folioblox | CV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0d0d0d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Folioblox | CV - Muhamad Soleh Sulaeman</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
     <style>
         :root {
             --ink: #0d0d0d;
@@ -19,9 +26,14 @@
 
         body {
             margin: 0;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
             background: var(--ink);
             color: var(--paper);
             font-family: Arial, Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .cv {
@@ -212,34 +224,134 @@
             font-size: 10px;
         }
 
-        @media (max-width: 650px) {
+        @media (max-width: 768px) {
+            .cv {
+                width: calc(100% - 20px);
+                margin: 12px auto;
+                padding: 28px 16px;
+                border-radius: 20px;
+            }
 
-            header,
-            main,
-            footer {
-                display: block;
+            header {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding-bottom: 28px;
+                text-align: center;
+            }
+
+            .cv-header {
+                align-items: center;
+            }
+
+            .cv-identity {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 16px;
+                width: 100%;
+            }
+
+            .portrait-frame {
+                width: 124px;
+                aspect-ratio: .78;
+                transform: none;
+                box-shadow: 0 12px 28px rgba(0, 0, 0, .28);
+            }
+
+            h1 {
+                font-size: clamp(32px, 8.5vw, 44px);
+                line-height: .98;
+                letter-spacing: -.05em;
+                margin-bottom: 8px;
+                word-break: break-word;
+            }
+
+            .role {
+                font-size: 13px;
+                line-height: 1.4;
+            }
+
+            .cv-actions {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                margin-top: 18px;
+            }
+
+            .cv-button {
+                width: 100%;
+                justify-content: center;
+                padding: 13px 18px;
+                font-size: 13px;
             }
 
             .contact {
-                margin-top: 24px;
-                text-align: left;
+                margin-top: 14px;
+                text-align: center;
+                font-size: 12px;
+                line-height: 1.8;
+                width: 100%;
+            }
+
+            .contact a {
+                display: inline-block;
+                padding: 2px 0;
             }
 
             main {
-                padding-top: 34px;
+                display: flex;
+                flex-direction: column;
+                gap: 28px;
+                padding-top: 28px;
+            }
+
+            .intro {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .skills {
+                gap: 8px;
+            }
+
+            .skill {
+                padding: 8px 12px;
+                font-size: 12px;
             }
 
             .experience {
-                display: block;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding-top: 8px;
             }
 
             .experience article {
-                margin-top: 12px;
+                min-height: auto;
+                padding: 16px;
+                border: 1px solid rgba(246, 242, 236, .16);
+                border-radius: 14px;
+                background: rgba(246, 242, 236, .03);
+            }
+
+            .experience h3 {
+                margin: 8px 0 0;
+                font-size: 18px;
+                line-height: 1.25;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 8px;
+                margin-top: 36px;
+                padding-top: 16px;
             }
 
             footer span+span {
                 display: block;
-                margin-top: 8px;
             }
         }
     </style>
